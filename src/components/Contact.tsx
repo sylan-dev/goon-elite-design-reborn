@@ -1,10 +1,9 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -16,6 +15,10 @@ const Contact = () => {
     message: ''
   });
   const { toast } = useToast();
+
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para transfer executivo.', '_blank');
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,6 +36,13 @@ const Contact = () => {
 
   const contactInfo = [
     {
+      icon: MessageCircle,
+      title: "WhatsApp",
+      info: "(11) 99999-9999",
+      description: "Orçamento gratuito em segundos",
+      isWhatsApp: true
+    },
+    {
       icon: Phone,
       title: "Telefone",
       info: "(11) 99999-9999",
@@ -41,7 +51,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "E-mail",
-      info: "contato@executivetransfer.com.br",
+      info: "contato@goontransfer.com.br",
       description: "Resposta em até 30 minutos"
     },
     {
@@ -49,12 +59,6 @@ const Contact = () => {
       title: "Localização",
       info: "São Paulo - SP",
       description: "Atendemos toda a Grande São Paulo"
-    },
-    {
-      icon: Clock,
-      title: "Horário",
-      info: "24h por dia, 7 dias por semana",
-      description: "Sempre prontos para atendê-lo"
     }
   ];
 
@@ -72,10 +76,29 @@ const Contact = () => {
             Reserve seu transfer
             <span className="text-luxury-gold block">premium agora</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
             Entre em contato conosco e descubra como podemos tornar sua próxima viagem 
             uma experiência inesquecível de luxo e conforto.
           </p>
+          
+          {/* WhatsApp CTA Destacado */}
+          <div className="bg-green-600 text-white rounded-2xl p-8 max-w-2xl mx-auto mb-8">
+            <div className="flex items-center justify-center mb-4">
+              <MessageCircle className="w-8 h-8 mr-3" />
+              <h3 className="text-2xl font-bold">Orçamento Rápido pelo WhatsApp</h3>
+            </div>
+            <p className="text-green-100 mb-6 text-lg">
+              Receba seu orçamento personalizado em segundos! Nossa equipe responde imediatamente.
+            </p>
+            <Button 
+              onClick={handleWhatsAppClick}
+              size="lg"
+              className="bg-white text-green-600 hover:bg-green-50 font-semibold text-lg px-8 py-4"
+            >
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Solicitar Orçamento Agora
+            </Button>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16">
@@ -84,7 +107,7 @@ const Contact = () => {
             <Card className="shadow-2xl border-0">
               <CardContent className="p-8">
                 <h3 className="font-luxury text-2xl font-bold text-luxury-dark mb-6">
-                  Solicite seu Orçamento
+                  Ou preencha o formulário
                 </h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -199,24 +222,41 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <Card 
                   key={index} 
-                  className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-luxury-gold"
+                  className={`hover:shadow-lg transition-all duration-300 border-l-4 ${
+                    info.isWhatsApp ? 'border-l-green-600 bg-green-50' : 'border-l-luxury-gold'
+                  }`}
                   style={{animationDelay: `${index * 0.2}s`}}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-luxury-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-6 h-6 text-luxury-gold" />
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
+                        info.isWhatsApp ? 'bg-green-600' : 'bg-luxury-gold/10'
+                      }`}>
+                        <info.icon className={`w-6 h-6 ${
+                          info.isWhatsApp ? 'text-white' : 'text-luxury-gold'
+                        }`} />
                       </div>
                       <div>
                         <h4 className="font-semibold text-lg text-luxury-dark mb-1">
                           {info.title}
                         </h4>
-                        <p className="text-luxury-gold font-medium mb-1">
+                        <p className={`font-medium mb-1 ${
+                          info.isWhatsApp ? 'text-green-600' : 'text-luxury-gold'
+                        }`}>
                           {info.info}
                         </p>
                         <p className="text-gray-600 text-sm">
                           {info.description}
                         </p>
+                        {info.isWhatsApp && (
+                          <Button 
+                            onClick={handleWhatsAppClick}
+                            size="sm"
+                            className="mt-3 bg-green-600 hover:bg-green-700 text-white"
+                          >
+                            Abrir WhatsApp
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </CardContent>

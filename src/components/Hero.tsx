@@ -1,7 +1,12 @@
+
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Shield, Star, Clock } from 'lucide-react';
+import { ArrowRight, Shield, Star, Clock, MessageCircle } from 'lucide-react';
 
 const Hero = () => {
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para transfer executivo.', '_blank');
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-luxury-dark via-luxury-charcoal to-luxury-dark overflow-hidden">
       {/* Background Pattern */}
@@ -18,7 +23,7 @@ const Hero = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="w-12 h-1 bg-luxury-gold"></div>
-                <span className="text-luxury-gold font-medium tracking-wider uppercase text-sm">Transfer Executivo</span>
+                <span className="text-luxury-gold font-medium tracking-wider uppercase text-sm">GoOn Transfer</span>
               </div>
               
               <h1 className="font-luxury text-5xl lg:text-7xl font-bold text-white leading-tight">
@@ -56,10 +61,12 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
+                onClick={handleWhatsAppClick}
                 size="lg" 
-                className="bg-luxury-gold text-luxury-dark hover:bg-luxury-gold-light transition-all duration-300 font-semibold text-lg px-8 py-4 group"
+                className="bg-green-600 hover:bg-green-700 text-white transition-all duration-300 font-semibold text-lg px-8 py-4 group"
               >
-                Solicitar Transfer
+                <MessageCircle className="mr-2 w-5 h-5" />
+                Orçamento via WhatsApp
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
@@ -70,14 +77,22 @@ const Hero = () => {
                 Ver Frota
               </Button>
             </div>
+
+            {/* WhatsApp Highlight */}
+            <div className="bg-green-600/10 border border-green-600/20 rounded-lg p-4">
+              <p className="text-green-400 text-sm font-medium flex items-center">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Resposta imediata pelo WhatsApp • Orçamento gratuito em segundos
+              </p>
+            </div>
           </div>
 
           {/* Image/Visual */}
           <div className="relative animate-slide-in-right">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Luxurious car interior representing comfort and elegance"
+                src="https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Carro de luxo Mercedes-Benz representando conforto e elegância"
                 className="rounded-2xl shadow-2xl w-full h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-luxury-dark/20 to-transparent rounded-2xl"></div>
