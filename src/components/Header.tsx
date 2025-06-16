@@ -17,11 +17,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-gradient-to-br from-luxury-gold to-luxury-gold-light rounded-lg flex items-center justify-center">
-              <span className="text-luxury-dark font-bold text-xl">GO</span>
+              <span className="text-luxury-dark font-bold text-xl">GoOn</span>
             </div>
             <div>
-              <h1 className="font-luxury text-xl text-white font-semibold">GoOn Transfer</h1>
-              <p className="text-luxury-gold text-xs">Luxury Transportation</p>
+              <h1 className="font-luxury text-xl text-white font-semibold">Transfer Brazil</h1>
+              <p className="text-luxury-gold text-xs">Transporte de Luxo em São Paulo</p>
             </div>
           </div>
 
