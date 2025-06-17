@@ -86,7 +86,7 @@ const About = () => {
           <div className="relative animate-slide-in-right">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://goontransfer.com/wp-content/uploads/2024/06/Foto-GoOn-Transfer-de-Luxo-em-Sao-Paulo-SP-Casamentos-BMW.png?=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Modern office setup representing technology and professionalism"
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />

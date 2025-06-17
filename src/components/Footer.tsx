@@ -13,9 +13,7 @@ const Footer = () => {
                 <Car className="w-6 h-6 text-luxury-dark" />
               </div>
               <div>
-                <h3 className="font-luxury text-xl font-semibold">Executive Transfer</h3>
-                <p className="text-luxury-gold text-xs">Luxury Transportation</p>
-              </div>
+                <img src="/goon.png" alt="Logo GoOn"className="w-25 h-16 object-contain rounded-lg"/>              </div>
             </div>
             <p className="text-luxury-platinum leading-relaxed">
               Redefinindo o transporte executivo com luxo, conforto e segurança. 
