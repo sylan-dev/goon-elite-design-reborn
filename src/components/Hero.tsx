@@ -8,7 +8,8 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-luxury-dark via-luxury-charcoal to-luxury-dark overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center pt-20 bg-gradient-to-br from-luxury-dark via-luxury-charcoal to-luxury-dark overflow-hidden">
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -16,13 +17,13 @@ const Hero = () => {
         }}></div>
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="container mx-auto px-5 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="w-12 h-1 bg-luxury-gold"></div>
+                <div className="w-13 h-1 bg-luxury-gold"></div>
                 <span className="text-luxury-gold font-medium tracking-wider uppercase text-sm">GoOn Transfer</span>
               </div>
               
@@ -91,7 +92,7 @@ const Hero = () => {
           <div className="relative animate-slide-in-right">
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://goontransfer.com/wp-content/uploads/2024/06/Transfer-de-Luxo-em-Sao-Paul-com-logo3.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Carro de luxo Mercedes-Benz representando conforto e elegância"
                 className="rounded-2xl shadow-2xl w-full h-[600px] object-cover"
               />

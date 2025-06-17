@@ -12,16 +12,15 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-luxury-dark/95 backdrop-blur-sm border-b border-luxury-gold/20 z-50">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-8 lg:px-12">
+        <div className="flex items-center justify-between h-30">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-luxury-gold to-luxury-gold-light rounded-lg flex items-center justify-center">
-              <span className="text-luxury-dark font-bold text-xl">GoOn</span>
-            </div>
-            <div>
-              <h1 className="font-luxury text-xl text-white font-semibold">Transfer Brazil</h1>
-              <p className="text-luxury-gold text-xs">Transporte de Luxo em São Paulo</p>
+          <div className="flex items-center space-x-4">
+            
+            <div><img src="/goon.png" alt="Logo GoOn"className="w-25 h-16 object-contain rounded-lg"/>
+
+
+              
             </div>
           </div>
 
